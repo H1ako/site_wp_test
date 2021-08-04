@@ -1,0 +1,91 @@
+/*Theme Name: Main
+Version: 0.0.1 
+Description: This is stylesheet for main theme
+Author: Nikita Sobolev 
+Author URI: none
+*/
+
+@import "normalize.scss";
+@import "variables.scss";
+@import "fonts.scss";
+
+// ===Common===
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;  // 10px
+}
+body{
+    background: var(--color-bg);
+}
+// ===/Common===
+
+// ===Header===
+header{
+    position: relative;
+    width: 100%;
+
+    .main-part{
+
+        .section-inner{
+
+            .btns{
+
+                &__more{
+                    @include btnYellow;
+                }
+
+                &__dhl{
+                    @include btnWhite;
+                }
+            }
+        }
+    }
+}
+// ===/Header===
+
+// ===Main===
+main{
+    position: relative;
+    width: 100%;
+    // ==Services==
+    .section-services{
+        position: relative;
+    }
+    // ==/Services==
+
+    // ==Video==
+    .section-video{
+        position: relative;
+    }
+    // ==/Video==
+
+    // ==Logistics==
+    .section-logistics{
+        position: relative;
+    }
+    // ==/Logistics==
+
+    // ==Slogan==
+    .section-slogan{
+        position: relative;
+    }
+    // ==/Slogan==
+
+    // ==Partners==
+    .section-partners{
+        position: relative;
+    }
+    // ==/Partners==
+}
+// ===/Main===
+
+// ===Footer===
+footer{
+    position: relative;
+    width: 100%;
+}
+// ===/Footer===
