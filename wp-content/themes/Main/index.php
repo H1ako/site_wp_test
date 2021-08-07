@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+
+use function PHPSTORM_META\type;
+
+get_header(); ?>
     <main>
         <section class="section-services">
             <div class="section-inner">
@@ -83,7 +87,7 @@
                         </form>
                     </div>
                     <div class='filter-area__img'>
-                        <img src="<?= get_template_directory_uri() ?>/Images/logo.png" alt="">
+                        <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="">
                     </div>
                 </div>
             </div>
@@ -101,9 +105,14 @@
         </section>
         <section class='section-partners'>
             <div class="section-inner">
+            <?php $partners = carbon_get_theme_option('site_partners');
+            if ($partners) foreach ($partners as $partner): ?>
                 <div class="partner">
-                    <img src="<?= get_template_directory_uri() ?>/Images/partner_img.png" alt="">
+                    <img src="<?= wp_get_attachment_image_url($partner, 'full') ?>" alt="Partner">
                 </div>
+            <?php endforeach; ?>
+
+                
             </div>
         </section>
     </main>

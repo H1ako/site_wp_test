@@ -21,6 +21,19 @@ html{
 body{
     background: var(--color-bg);
 }
+.section-inner{
+    margin: 0 auto;
+    
+    @media (min-width: 1301px){
+        width: 65%;
+    }
+    @media (max-width: 1300px){
+        width: 85%;
+    }
+    @media (max-width: 991px){
+        width: calc(100% - 4rem);
+    }
+}
 // ===/Common===
 
 // ===Header===
@@ -28,17 +41,225 @@ header{
     position: relative;
     width: 100%;
 
-    .main-part{
+    .top-bar{
+        width: 100%;
+        background: var(--color-main);
+        color: white;
+        position: relative;
+        .section-inner{
+            height: 100%;
+            min-height: 5vh;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            @include fontPoppinsRegular;
+            text-transform: capitalize;
+            .language,
+            .profile{
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                i{
+                    margin-left: 3px;
+                }
+            }
+
+            .contact{
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: 3rem;
+                span{
+                    margin-left: 13px;
+                }
+            }
+        }
+    }
+    nav{
+        background: var(--color-second);
+        position: relative;
+        
+        
 
         .section-inner{
+            transition: .6s linear;
+            display: flex;
+            height: auto;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            min-height: 12vh;
+
+            @media (max-width: 740px){
+                flex-direction: column;
+                max-height: 12vh;
+                &.active{
+                    max-height: 100vh;
+                }
+            }
+
+            .logo-and-menu{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @media (max-width: 740px){
+                    flex-shrink: 0;
+                    order: -1;
+                    width: 100%;
+                    height: 12vh;
+                    
+                }
+                .logo{
+                    width: 100%;
+                    max-width: 134px;
+                }
+                .menu{
+                    cursor: pointer;
+                    font-size: 3rem;
+                    @media (min-width: 741px){
+                        display: none;
+                    }
+                }
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                color: var(--color-main);
+                text-transform: uppercase;
+                @include fontPoppinsRegular;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                @media (max-width: 740px){
+                    flex-direction: column;
+                    padding: 0 0 5vh;
+                }
+
+                li{
+                    white-space: nowrap;
+                    @media (max-width: 740px){
+                        margin-top: 2vh;
+                        font-size: 2rem;
+                    }
+                    @media (min-width: 741px){
+                        &:not(:first-child){
+                            margin-left: min(4.5rem, 2vw);
+                        }
+                    }
+                    
+                }
+            }
+            .search{
+                flex-shrink: 0;
+                border-radius: 50%;
+                color: var(--color-light);
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                box-shadow: 0px 11px 1em 4px rgba(186, 0, 0, .3);
+                align-items: center;
+                justify-content: center;
+                background: var(--color-main);
+                transition: all .6s;
+                @media (max-width: 740px){
+                    order: -1;
+                }
+            }
+        }
+    }
+    .main-part{
+        position: relative;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        color: var(--color-light);
+
+        &::after{
+            position: absolute;
+            top: 0;bottom: 0;right: 0;left: 0;
+            content: '';
+            background: linear-gradient(45deg, var(--color-main) 20%, rgba(0, 0, 0, 0));
+            z-index: 5;
+        }
+        
+        .section-inner{
+            padding: 2.5vh 0 5vh;
+            min-height: 85.5vh;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .about{
+                &__title{
+                    position: relative;
+                    @include fontPoppinsBold;
+                    font-size: 7rem;
+                    margin: 0;
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        background: var(--color-second);
+                        left: 0;
+                        top: 120%;
+                        width: 10rem;
+                        height: 3px;
+                    }
+                }
+                &__desc{
+                    word-wrap: break-word;
+                    width: 70rem;
+                    max-width: 100%;
+                    @include fontPoppinsLight;
+                    font-size: 2rem;
+                    color: var(--color-second);
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 10rem;
+                }
+                &__features{
+                    display: flex;
+                    align-items: center;
+                    @include fontPoppinsSemiBold;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    margin-top: 5rem;
+                    li{
+                        position: relative;
+                        &:not(:first-child){
+                            margin-left: 5.6rem;
+                            &::before{
+                                position: absolute;
+                                top: 100%;
+                                transform: translateY(-150%);
+                                left: -2.8rem;
+                                content: '';
+                                width: .4rem;
+                                height: .4rem;
+                                border-radius: 50%;
+                                background: var(--color-second);
+                            }
+                        }
+                    }
+                }
+            }
 
             .btns{
-
+                margin-top: 4.5rem;
                 &__more{
                     @include btnYellow;
                 }
 
                 &__dhl{
+                    margin-left: 2rem;
                     @include btnWhite;
                 }
             }

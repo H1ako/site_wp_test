@@ -15,7 +15,7 @@
                     <span>English</span><i class="fa fa-angle-down" aria-hidden="true"></i>
                 </div>
                 <div class="contact">
-                    <i class="fa fa-users" aria-hidden="true"></i><span>Contact Center</span>
+                    <i class="fa fa-users" aria-hidden="true"></i><span>contact center</span>
                 </div>
                 <div class="profile">
                     <span>Country Profile</span><i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -23,9 +23,12 @@
             </div>
         </div>
         <nav>
-            <div class="section-inner">
-                <img src="<?= get_template_directory_uri() ?>/Images/logo.png" alt="" class="logo">
-                <ul class="navigation">       
+            <div class="section-inner" id='menu'>
+                <div class="logo-and-menu">
+                    <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="" class="logo">
+                    <div class="menu" id='menu-btn'><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </div>
+                <ul>       
                     <li>express</li>
                     <li>Parcel & Ecommerce</li>
                     <li>Logistics</li>
@@ -36,10 +39,10 @@
                 <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
             </div>
         </nav>
-        <div class="main-part">
+        <div class="main-part" style='background-image: url(<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_header_bg' ), 'full'); ?>)'>
             <div class="section-inner">
                 <div class="about">
-                    <h1 class="about__title">We Deliver With Speed</h1>
+                    <h1 class="about__title">We Deliver<br>With Speed</h1>
                     <p class="about__desc">
                         When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
                     </p>

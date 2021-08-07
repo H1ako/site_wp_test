@@ -32,28 +32,30 @@ $screen-lg-max: 1199;
 }
 
 @mixin btnYellow {
-    @include fontPoppinsRegular;
+    @include fontPoppinsSemiBold;
     font-size: 1.2rem;
     outline: none;
     border: none;
     border-radius: 3em;
-    padding: 1.2em 2em;
+    padding: 1em 3em;
     text-transform: uppercase;
     background: var(--color-second);
     color: var(--color-main);
+    border: .25em solid var(--color-second);
+    box-shadow: 0 .5em 20px 1em rgba(255, 204, 0, .3);
 
 }
 
 @mixin btnWhite {
     text-transform: uppercase;
-    @include fontPoppinsRegular;
+    @include fontPoppinsSemiBold;
     font-size: 1.2rem;
     outline: none;
     border-radius: 3em;
-    padding: 1.2em 2em;
+    padding: 1em 3em;
     color: var(--color-light);
     background: none;
-    border: .5em solid var(--color-light);
+    border: .25em solid var(--color-light);
 }
 // ===/Common===
 
@@ -69,5 +71,8 @@ $screen-lg-max: 1199;
     --color-second: #ffcc00;
 
     //==/Common==
+
+    //==Header==
+    //==/Header==
 }
 //===/Variables===
