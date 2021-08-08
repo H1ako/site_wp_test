@@ -85,7 +85,8 @@ header{
         
 
         .section-inner{
-            transition: .6s linear;
+            overflow: hidden;
+            transition: max-height .6s linear;
             display: flex;
             height: auto;
             align-items: center;
@@ -127,9 +128,7 @@ header{
             ul{
                 padding: 0;
                 margin: 0;
-                color: var(--color-main);
                 text-transform: uppercase;
-                @include fontPoppinsRegular;
                 list-style: none;
                 display: flex;
                 align-items: center;
@@ -139,6 +138,11 @@ header{
                 }
 
                 li{
+                    a{
+                        text-decoration: none;
+                        color: var(--color-main);
+                        @include fontPoppinsRegular;
+                    }
                     white-space: nowrap;
                     @media (max-width: 740px){
                         margin-top: 2vh;
@@ -174,7 +178,7 @@ header{
         position: relative;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: auto 100%;
         background-position: center;
         color: var(--color-light);
 
@@ -198,7 +202,7 @@ header{
                 &__title{
                     position: relative;
                     @include fontPoppinsBold;
-                    font-size: 7rem;
+                    font-size: clamp(5rem, 7vw, 7rem);
                     margin: 0;
 
                     &::after{
@@ -216,17 +220,18 @@ header{
                     width: 70rem;
                     max-width: 100%;
                     @include fontPoppinsLight;
-                    font-size: 2rem;
+                    font-size: clamp(1.8rem, 2vw, 2rem);
                     color: var(--color-second);
                     margin: 0;
                     padding: 0;
                     margin-top: 10rem;
                 }
                 &__features{
+                    white-space: nowrap;
                     display: flex;
                     align-items: center;
                     @include fontPoppinsSemiBold;
-                    font-size: 2rem;
+                    font-size: clamp(1.8rem, 2vw, 2rem);
                     text-transform: uppercase;
                     list-style: none;
                     padding: 0;
@@ -275,11 +280,134 @@ main{
     // ==Services==
     .section-services{
         position: relative;
+        width: 100%;
+        .section-inner{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            .title{
+                @include fontPoppinsBold;
+                margin-top: 14rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+                .bg-title{
+                    position: absolute;
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-size: clamp(8rem, 13vw, 13rem);
+                    padding: 0;
+                    color: var(--color-dark);
+                    opacity: .05;
+                }
+                .main-title{
+                    text-transform: capitalize;
+                    margin: 0;
+                    padding: 0;
+                    font-size: clamp(3rem, 3.5vw, 3.5rem);
+                    position: absolute;
+                    color: var(--color-main);
+                }
+            }
+            .services{
+                margin-top: 14rem;
+                width: 100%;
+                position: relative;
+                display: grid;
+                grid-gap: 3rem;
+                grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+                // grid-template-rows: minmax(34rem, 1fr);
+                .service{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    align-items: flex-start;
+                    img{
+                        width: 100%;
+                        max-width: 100%;
+                        height: 50%;
+                    }
+                    &__title{
+                        font-size: 1.75rem;
+                        @include fontPoppinsSemiBold;
+                        margin: 0;
+                        padding: 0;
+                        margin-top: 2rem;
+                        color: var(--color-main);
+                        text-transform: uppercase;
+                    }
+                    &__desc{
+                        font-size: 1.35rem;
+                        @include fontPoppinsRegular;
+                        // line-height: 20px;
+                        margin: 0;
+                        padding: 0;
+                        margin-top: 1rem;
+                        color: var(--color-dark);
+                        opacity: .6;
+                    }
+                    &__btn-more{
+                        font-size: 1.35rem;
+                        margin-top: 2rem;
+                        @include fontPoppinsBold;
+                        text-decoration: none;
+                        color: var(--color-dark);
+                        text-transform: capitalize;
+                    }
+                }
+
+                .worldwide{
+                    color: var(--color-light);
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 3rem;
+                    background: var(--color-main);
+                    
+                    .section-inner{
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        position: relative;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: center;
+                    }
+                    &__title{
+                        font-size: 1.75rem;
+                        white-space: nowrap;
+                        @include fontPoppinsSemiBold;
+                        margin: 0;
+                        padding: 0;
+                        text-transform: capitalize;
+                    }
+                    &__desc{
+                        font-size: 1.35rem;
+                        margin: 0;
+                        margin-top: 4rem;
+                        @include fontPoppinsLight;
+                        padding: 0;
+                    }
+                    &__location{
+                        font-size: 1.35rem;
+                        margin-top: 3rem;
+                        @include fontPoppinsRegular;
+                    }
+                    &__explore{
+                        margin-top: 2rem;
+                        @include btnYellow;
+                    }
+                }
+            }
+        }
     }
     // ==/Services==
 
     // ==Video==
     .section-video{
+        margin-top: 10.5rem;
         position: relative;
     }
     // ==/Video==

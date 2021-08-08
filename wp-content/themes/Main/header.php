@@ -22,20 +22,28 @@
                 </div>
             </div>
         </div>
+        
         <nav>
             <div class="section-inner" id='menu'>
                 <div class="logo-and-menu">
                     <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="" class="logo">
                     <div class="menu" id='menu-btn'><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
-                <ul>       
+                <!-- <ul>       
                     <li>express</li>
                     <li>Parcel & Ecommerce</li>
                     <li>Logistics</li>
                     <li>mail</li>
                     <li>press</li>
                     <li>about</li>
-                </ul>
+                </ul> -->
+                <?php
+                wp_nav_menu( [
+                    'theme_location'  => 'menu_main_header',
+                    'container'       => null,
+                    'menu_class'      => null,
+                ] );
+                ?>
                 <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
             </div>
         </nav>

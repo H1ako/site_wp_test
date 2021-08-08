@@ -29,7 +29,10 @@ function site_scripts() {
 }
 
 //this func add style-sheets
-
+add_action( 'after_setup_theme', 'theme_support' );
+function theme_support() {
+	register_nav_menu( 'menu_main_header', 'Header Menu' );
+}
 //Remove WP unecessary plugins
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');

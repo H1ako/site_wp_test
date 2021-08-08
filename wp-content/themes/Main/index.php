@@ -8,11 +8,27 @@ get_header(); ?>
             <div class="section-inner">
                 <div class="title">
                     <h1 class="bg-title">services</h1>
-                    <h1 class="main_title">Awesome services</h1>
+                    <h1 class="main-title">Awesome services</h1>
                 </div>
                 <div class="services">
                     <div class="service">
-                        <img src="" alt="">
+                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
+                        <h2 class="service__title">Express services</h2>
+                        <h3 class="service__desc">
+                            When an unknown printer took a galley of type and scrambled it to make a type specimen.
+                        </h3>
+                        <a href="" class="service__btn-more">read more</a>
+                    </div>
+                    <div class="service">
+                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
+                        <h2 class="service__title">Express services</h2>
+                        <h3 class="service__desc">
+                            When an unknown printer took a galley of type and scrambled it to make a type specimen.
+                        </h3>
+                        <a href="" class="service__btn-more">read more</a>
+                    </div>
+                    <div class="service">
+                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
                         <h2 class="service__title">Express services</h2>
                         <h3 class="service__desc">
                             When an unknown printer took a galley of type and scrambled it to make a type specimen.
@@ -20,13 +36,16 @@ get_header(); ?>
                         <a href="" class="service__btn-more">read more</a>
                     </div>
                     <div class="worldwide">
-                        <h2 class="worldwide__title">dhi worldwide</h2>
-                        <h3 class="worldwide__desc">
-                            When an unknown prot printer type and scra
-                        </h3>
-                        <select class="worldwide__location">
-                            <option value="" selected hidden>Location</option>
-                        </select>
+                        <div class="section-inner">
+                            <h2 class="worldwide__title">DHI worldwide</h2>
+                            <h3 class="worldwide__desc">
+                                When an unknown prot printer type and scra
+                            </h3>
+                            <select class="worldwide__location">
+                                <option value="" selected hidden>Location</option>
+                            </select>
+                            <a href="" class="worldwide__explore">explore</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -37,6 +37,7 @@ $screen-lg-max: 1199;
     outline: none;
     border: none;
     border-radius: 3em;
+    text-decoration: none;
     padding: 1em 3em;
     text-transform: uppercase;
     background: var(--color-second);
@@ -48,6 +49,7 @@ $screen-lg-max: 1199;
 
 @mixin btnWhite {
     text-transform: uppercase;
+    text-decoration: none;
     @include fontPoppinsSemiBold;
     font-size: 1.2rem;
     outline: none;
