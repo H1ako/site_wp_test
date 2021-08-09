@@ -12,28 +12,34 @@ get_header(); ?>
                 </div>
                 <div class="services">
                     <div class="service">
-                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
-                        <h2 class="service__title">Express services</h2>
-                        <h3 class="service__desc">
-                            When an unknown printer took a galley of type and scrambled it to make a type specimen.
-                        </h3>
-                        <a href="" class="service__btn-more">read more</a>
+                        <div class="wrapper">
+                            <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
+                            <h2 class="service__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, fugit?</h2>
+                            <h3 class="service__desc">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat omnis vero asperiores! Error molestiae eos, dolorem corporis perspiciatis at facere! Sapiente eum, quam ipsum dolor minima commodi fugiat reprehenderit laborum molestiae illum cum porro soluta magni id ea harum labore expedita dolores nobis, corrupti ad quaerat qui deleniti praesentium! Perspiciatis.
+                            </h3>
+                        </div>
+                        <a href="" class="service__btn-more">read more<i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     </div>
                     <div class="service">
-                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
-                        <h2 class="service__title">Express services</h2>
-                        <h3 class="service__desc">
-                            When an unknown printer took a galley of type and scrambled it to make a type specimen.
-                        </h3>
-                        <a href="" class="service__btn-more">read more</a>
+                        <div class="wrapper">
+                            <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
+                            <h2 class="service__title">Express services</h2>
+                            <h3 class="service__desc">
+                                When an unknown printer took a galley of type and scrambled it to make a type specimen.
+                            </h3>
+                        </div>
+                        <a href="" class="service__btn-more">read more<i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     </div>
                     <div class="service">
-                        <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
-                        <h2 class="service__title">Express services</h2>
-                        <h3 class="service__desc">
-                            When an unknown printer took a galley of type and scrambled it to make a type specimen.
-                        </h3>
-                        <a href="" class="service__btn-more">read more</a>
+                        <div class="wrapper">
+                            <img src="<?=get_template_directory_uri()?>/Images/service_img.png" alt="">
+                            <h2 class="service__title">Express services</h2>
+                            <h3 class="service__desc">
+                                When an unknown printer took a galley of type and scrambled it to make a type specimen.
+                            </h3>
+                        </div>
+                        <a href="" class="service__btn-more">read more<i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                     </div>
                     <div class="worldwide">
                         <div class="section-inner">
@@ -41,9 +47,19 @@ get_header(); ?>
                             <h3 class="worldwide__desc">
                                 When an unknown prot printer type and scra
                             </h3>
-                            <select class="worldwide__location">
-                                <option value="" selected hidden>Location</option>
-                            </select>
+                            <div class="worldwide__location" id='select_location'>
+                                <div class="loc_main" id="loc_main">
+                                    <div class="loc_main__text" id="loc_text">Location</div>
+                                    <div class="loc_main__items">
+                                        <div class="loc_item">Moscow</div>
+                                        <div class="loc_item">Tokyo</div>
+                                        <div class="loc_item">London</div>
+                                    </div>
+                                </div>
+                                <label for="loc_main"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                                
+                                
+                            </div>
                             <a href="" class="worldwide__explore">explore</a>
                         </div>
                     </div>

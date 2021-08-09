@@ -348,10 +348,12 @@ template {
   --color-light: #fff;
   --color-dark: #222;
   --color-bg: #fff;
-  --color-main: #ba0000;
-  --color-main-dark: darken(var(--color-main), 5%);
-  --color-main-light: lighten(var(--color-main), 5%);
+  --color-main-num: 0;
+  --color-main: hsl(var(--color-main-num), 100%, 36%);
+  --color-main-dark: hsl(var(--color-main-num), 100%, 30%);
+  --color-main-light: hsl(var(--color-main-num), 100%, 40%);
   --color-second: #ffcc00;
+  --transitionTime-select-location: .2s;
 }
 
 *,
@@ -682,7 +684,7 @@ main .section-services .section-inner .title .main-title {
   text-transform: capitalize;
   margin: 0;
   padding: 0;
-  font-size: clamp(3rem, 3.5vw, 3.5rem);
+  font-size: clamp(3rem, 4.5vw, 4.5rem);
   position: absolute;
   color: var(--color-main);
 }
@@ -697,25 +699,45 @@ main .section-services .section-inner .services {
 main .section-services .section-inner .services .service {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
+}
+main .section-services .section-inner .services .service .wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 main .section-services .section-inner .services .service img {
+  object-position: center;
+  flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  height: 50%;
 }
 main .section-services .section-inner .services .service__title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
   font-size: 1.75rem;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
   padding: 0;
   margin-top: 2rem;
   color: var(--color-main);
   text-transform: uppercase;
 }
 main .section-services .section-inner .services .service__desc {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   font-size: 1.35rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -733,6 +755,11 @@ main .section-services .section-inner .services .service__btn-more {
   text-decoration: none;
   color: var(--color-dark);
   text-transform: capitalize;
+}
+main .section-services .section-inner .services .service__btn-more i {
+  margin-left: 4px;
+  color: var(--color-main);
+  transform: rotate(-90deg);
 }
 main .section-services .section-inner .services .worldwide {
   color: var(--color-light);
@@ -771,10 +798,87 @@ main .section-services .section-inner .services .worldwide__desc {
   padding: 0;
 }
 main .section-services .section-inner .services .worldwide__location {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   font-size: 1.35rem;
   margin-top: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+main .section-services .section-inner .services .worldwide__location.active .loc_main {
+  background: var(--color-second);
+}
+main .section-services .section-inner .services .worldwide__location.active .loc_main__text {
+  color: var(--color-main);
+}
+main .section-services .section-inner .services .worldwide__location.active .loc_main__items {
+  transition: max-height 0.8s linear;
+  max-height: 1000px;
+}
+main .section-services .section-inner .services .worldwide__location.active label {
+  border-left: 2px solid var(--color-main);
+}
+main .section-services .section-inner .services .worldwide__location .loc_main {
+  flex-grow: 1;
+  flex-shrink: 1;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  position: relative;
+  height: 40px;
+  flex-basis: 160px;
+  transition: background var(--transitionTime-select-location) linear;
+  background: var(--color-main-dark);
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__text {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: color var(--transitionTime-select-location) linear;
+  color: var(--color-light);
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__items {
+  position: relative;
+  width: calc(100% + 40px);
+  max-height: 0;
+  transition: max-height 0.25s linear;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__items .loc_item {
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+  background: var(--color-main-dark);
+  width: 100%;
+  color: var(--color-light);
+  height: 40px;
+  transition: background var(--transitionTime-select-location) linear;
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__items .loc_item:not(.active) {
+  cursor: pointer;
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__items .loc_item.active {
+  display: none;
+}
+main .section-services .section-inner .services .worldwide__location .loc_main__items .loc_item:hover {
+  background: var(--color-main);
+}
+main .section-services .section-inner .services .worldwide__location label {
+  flex-shrink: 0;
+  color: var(--color-main);
+  background: var(--color-second);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: border-left var(--transitionTime-select-location) linear;
+  width: 40px;
 }
 main .section-services .section-inner .services .worldwide__explore {
   margin-top: 2rem;

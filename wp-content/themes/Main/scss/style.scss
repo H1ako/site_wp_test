@@ -304,7 +304,7 @@ main{
                     text-transform: capitalize;
                     margin: 0;
                     padding: 0;
-                    font-size: clamp(3rem, 3.5vw, 3.5rem);
+                    font-size: clamp(3rem, 4.5vw, 4.5rem);
                     position: absolute;
                     color: var(--color-main);
                 }
@@ -316,27 +316,47 @@ main{
                 display: grid;
                 grid-gap: 3rem;
                 grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-                // grid-template-rows: minmax(34rem, 1fr);
                 .service{
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
                     position: relative;
-                    align-items: flex-start;
+                    
+                    .wrapper{
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
                     img{
+                        object-position: center;
+                        flex-shrink: 0;
                         width: 100%;
                         max-width: 100%;
-                        height: 50%;
                     }
                     &__title{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        width: 100%;
+                        display: -webkit-box;
                         font-size: 1.75rem;
                         @include fontPoppinsSemiBold;
                         margin: 0;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
                         padding: 0;
                         margin-top: 2rem;
                         color: var(--color-main);
                         text-transform: uppercase;
                     }
                     &__desc{
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
                         font-size: 1.35rem;
                         @include fontPoppinsRegular;
                         // line-height: 20px;
@@ -353,6 +373,12 @@ main{
                         text-decoration: none;
                         color: var(--color-dark);
                         text-transform: capitalize;
+
+                        i{
+                            margin-left: 4px;
+                            color: var(--color-main);
+                            transform: rotate(-90deg);
+                        }
                     }
                 }
 
@@ -391,9 +417,95 @@ main{
                         padding: 0;
                     }
                     &__location{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
                         font-size: 1.35rem;
                         margin-top: 3rem;
-                        @include fontPoppinsRegular;
+                        position: relative;
+                        cursor: pointer;
+
+                        &.active{
+                            .loc_main{
+                                background: var(--color-second);
+
+                                &__text{
+                                    color: var(--color-main);
+                                }
+
+                                &__items{
+                                    transition: max-height .8s linear;
+                                    max-height: 1000px;
+                                }
+                            }
+                            
+                            label{
+                                border-left: 2px solid var(--color-main);
+                            }
+                        }
+
+                        .loc_main{
+                            flex-grow: 1;
+                            flex-shrink: 1;
+                            @include fontPoppinsRegular;
+                            position: relative;
+                            height: 40px;
+                            flex-basis: 160px;
+                            transition: background var(--transitionTime-select-location) linear;
+                            background: var(--color-main-dark);
+
+                            &__text{
+                                display: flex;
+                                align-items: center;
+                                padding-left: 10px;
+                                height: 100%;
+                                width: 100%;
+                                overflow: hidden;
+                                transition: color var(--transitionTime-select-location) linear;
+                                color: var(--color-light);
+                            }
+                            &__items{
+                                position: relative;
+                                width: calc(100% + 40px);
+                                max-height: 0;
+                                transition: max-height .25s linear;
+                                display: flex;
+                                overflow: hidden;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                .loc_item{
+                                    display: flex;
+                                    padding-left: 10px;
+                                    align-items: center;
+                                    background: var(--color-main-dark);
+                                    width: 100%;
+                                    color: var(--color-light);
+                                    height: 40px;
+                                    transition: background var(--transitionTime-select-location) linear;
+                                    &:not(.active){
+                                        cursor: pointer;
+                                    }
+                                    &.active{
+                                        display: none;
+                                    }
+                                    &:hover{
+                                        background: var(--color-main);
+                                    }
+                                }
+                            }
+                        }
+
+                        label{
+                            flex-shrink: 0;
+                            color: var(--color-main);
+                            background: var(--color-second);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 40px;
+                            transition: border-left var(--transitionTime-select-location) linear;
+                            width: 40px;
+                        }
                     }
                     &__explore{
                         margin-top: 2rem;

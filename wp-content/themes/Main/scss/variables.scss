@@ -67,10 +67,12 @@ $screen-lg-max: 1199;
     --color-light: #fff;
     --color-dark: #222;
     --color-bg: #fff;
-    --color-main: #ba0000;
-    --color-main-dark: darken(var(--color-main), 5%);
-    --color-main-light: lighten(var(--color-main), 5%);
+    --color-main-num: 0;
+    --color-main: hsl(var(--color-main-num), 100%, 36%);
+    --color-main-dark: hsl(var(--color-main-num), 100%, 30%);;
+    --color-main-light: hsl(var(--color-main-num), 100%, 40%);
     --color-second: #ffcc00;
+    --transitionTime-select-location: .2s;
 
     //==/Common==
 
