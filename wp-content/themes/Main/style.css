@@ -966,6 +966,160 @@ main .section-video .video.pause .content {
 main .section-logistics {
   position: relative;
 }
+main .section-logistics .section-inner {
+  position: relative;
+}
+main .section-logistics .section-inner .features {
+  position: relative;
+}
+main .section-logistics .section-inner .features .feature {
+  position: relative;
+}
+main .section-logistics .section-inner .filter-area {
+  position: relative;
+  width: 100%;
+}
+main .section-logistics .section-inner .filter-area .filter {
+  background: var(--color-main);
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+main .section-logistics .section-inner .filter-area .filter__subject {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .section-logistics .section-inner .filter-area .filter__subject button {
+  height: 50px;
+  text-transform: uppercase;
+  background: var(--color-second);
+  color: var(--color-main);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  flex-grow: 1;
+}
+main .section-logistics .section-inner .filter-area .filter__subject button.active {
+  background: var(--color-main);
+  color: var(--color-light);
+}
+main .section-logistics .section-inner .filter-area .filter__form {
+  position: relative;
+  padding: 20px 40px 40px 40px;
+  width: 100%;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-top: 20px;
+  position: relative;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part.active .filter__form--part_main {
+  background: var(--color-second);
+  max-height: none;
+  border: none;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part.active .filter__form--part_main .filter__form--part_main__text {
+  color: var(--color-main);
+}
+main .section-logistics .section-inner .filter-area .filter__form--part.active .filter__form--part_main .filter__form--part_main__content {
+  transition: max-height 0.8s linear;
+  max-height: 1000px;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part.active label {
+  border-color: var(--color-second);
+  border-left-color: var(--color-main);
+  color: var(--color-main);
+  background: var(--color-second);
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+  max-height: 40px;
+  transition: background var(--transitionTime-select-location) linear;
+  border: 3px solid var(--color-light);
+  border-right: none;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__text {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 40px;
+  width: calc(100% - 40px);
+  overflow: hidden;
+  transition: color var(--transitionTime-select-location) linear;
+  color: var(--color-light);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__content {
+  background: var(--color-main);
+  position: relative;
+  width: calc(100% - 6px);
+  margin: 0 3px 3px 3px;
+  padding: 15px;
+  max-height: 0;
+  transition: max-height 0.45s linear;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-light);
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__content h1 {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__content ul {
+  padding: 0;
+  margin-top: 20px;
+  list-style: none;
+  font-size: 1.35rem;
+  display: flex;
+  flex-direction: column;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__content ul li {
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+main .section-logistics .section-inner .filter-area .filter__form--part_main__content ul li i {
+  margin-right: 10px;
+  color: var(--color-second);
+  transform: rotate(-90deg);
+}
+main .section-logistics .section-inner .filter-area .filter__form--part label {
+  position: absolute;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: var(--color-light);
+  border: 3px solid var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  right: 0;
+  transition: border-left-color var(--transitionTime-select-location) linear, border-color var(--transitionTime-select-location) linear, color var(--transitionTime-select-location) linear, background var(--transitionTime-select-location) linear;
+}
 main .section-slogan {
   position: relative;
   background: var(--color-main);
@@ -979,18 +1133,44 @@ main .section-slogan .section-inner {
   justify-content: space-between;
   color: var(--color-light);
 }
+@media (max-width: 800px) {
+  main .section-slogan .section-inner {
+    flex-direction: column;
+  }
+  main .section-slogan .section-inner a {
+    margin-top: clamp(20px, 3.5vh, 35px);
+  }
+}
+main .section-slogan .section-inner .wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
 main .section-slogan .section-inner .wrapper .title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 2.75rem;
+  text-transform: uppercase;
+}
+@media (max-width: 800px) {
+  main .section-slogan .section-inner .wrapper .title {
+    text-align: center;
+  }
 }
 main .section-slogan .section-inner .wrapper .desc {
+  word-wrap: break-word;
   width: 600px;
   max-width: 100%;
   margin-top: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.35rem;
+}
+@media (max-width: 800px) {
+  main .section-slogan .section-inner .wrapper .desc {
+    text-align: center;
+  }
 }
 main .section-slogan .section-inner a {
   white-space: nowrap;
@@ -1042,6 +1222,112 @@ main .section-partners .section-inner .partner img {
 }
 
 footer {
+  margin-top: 70px;
   position: relative;
   width: 100%;
+  background: linear-gradient(90deg, var(--color-main) 50%, var(--color-second) 50%);
+}
+footer .section-inner {
+  position: relative;
+  width: 95%;
+  min-height: 310px;
+  display: flex;
+  justify-content: center;
+}
+footer .section-inner .left-img,
+footer .section-inner .right-img {
+  position: absolute;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  width: 20%;
+  height: 310px;
+  background-position: center;
+  background-size: auto 100%;
+}
+@media (max-width: 990px) {
+  footer .section-inner .left-img,
+footer .section-inner .right-img {
+    display: none;
+  }
+}
+footer .section-inner .left-img {
+  left: 0%;
+  top: 0;
+}
+footer .section-inner .right-img {
+  left: 80%;
+  top: 0;
+}
+footer .section-inner .content {
+  position: relative;
+  flex-wrap: wrap;
+  min-height: 310px;
+  z-index: 100;
+  padding: clamp(10px, 3.5vh, 35px) 20px;
+  flex-shrink: 0;
+  background: var(--color-bg);
+  width: 70%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  footer .section-inner .content {
+    clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%);
+  }
+}
+@media (max-width: 990px) {
+  footer .section-inner .content {
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  footer .section-inner .content {
+    flex-direction: column;
+  }
+}
+footer .section-inner .content .contact,
+footer .section-inner .content .about,
+footer .section-inner .content .socials {
+  margin: 10px;
+  max-width: 100%;
+  overflow: hidden;
+}
+footer .section-inner .content .contact .title,
+footer .section-inner .content .about .title,
+footer .section-inner .content .socials .title {
+  color: var(--color-main);
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+footer .section-inner .content .contact ul,
+footer .section-inner .content .about ul,
+footer .section-inner .content .socials ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  list-style: none;
+  font-size: 14px;
+}
+footer .section-inner .content .contact ul li,
+footer .section-inner .content .about ul li,
+footer .section-inner .content .socials ul li {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #636363;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+footer .section-inner .content .contact ul li i,
+footer .section-inner .content .about ul li i,
+footer .section-inner .content .socials ul li i {
+  color: var(--color-main);
+  transform: rotate(-90deg);
+  margin-right: 5px;
 }

@@ -57,8 +57,6 @@ get_header(); ?>
                                     </div>
                                 </div>
                                 <label for="loc_main"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
-                                
-                                
                             </div>
                             <a href="" class="worldwide__explore">explore</a>
                         </div>
@@ -91,38 +89,70 @@ get_header(); ?>
                 <div class="filter-area">
                     <div class="filter">
                         <div class="filter__subject">
-                            <button>express</button>
+                            <button class="active">express</button>
                             <button>logistics</button>
                         </div>
-                        <form action="" class="filter__form">
-                            <label for="filter-snipmnet">
-                                <select id='filter-snipmnet' class="filter__form--snipment">
-                                    <option selected hidden>Track your shipment</option>
-                                </select>
-                            </label>
-                            <label for="filter-login">
-                                <select id='filter-login' class="filter__form--login">
-                                    <option selected hidden>New Login</option>
-                                </select>
-                            </label>
-                            <label for="filter-dhl">
-                                <select id='filter-dhl' class="filter__form--dhl">
-                                    <option selected hidden>find dhl point</option>
-                                </select>
-                            </label>
-                            <label for="filter-service">
-                                <div id='filter-service' class="filter__form--service">
-                                    <div class='wrapper'>
-                                        <h1 class="title">International Services to Another Country</h1>
+                        <div class="filter__form">
+                            <div class="filter__form--part">
+                                <div class="filter__form--part_main" id="filter__form--part-1">
+                                    <div class="filter__form--part_main__text" id="filter__form--part-1--text">track your shipment</div>
+                                    <div class="filter__form--part_main__content">
+                                        <h1>International Services to Another Country</h1>
                                         <ul>
-                                            <li>Emergancy</li>
-                                            <li>Time critical</li>
-                                            <li>less urgent</li>
+                                        <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Emergancy</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>time critical</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>less urgent</li>
                                         </ul>
                                     </div>
                                 </div>
-                            </label>
-                        </form>
+                                <label for="filter__form--part-1"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                            </div>
+
+                            <div class="filter__form--part">
+                                <div class="filter__form--part_main" id="filter__form--part-2">
+                                    <div class="filter__form--part_main__text" id="filter__form--part-2--text">new login</div>
+                                    <div class="filter__form--part_main__content">
+                                        <h1>International Services to Another Country</h1>
+                                        <ul>
+                                        <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Emergancy</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>time critical</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>less urgent</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label for="filter__form--part-2"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                            </div>
+
+                            <div class="filter__form--part">
+                                <div class="filter__form--part_main" id="filter__form--part-3">
+                                    <div class="filter__form--part_main__text" id="filter__form--part-3--text">Find DHL point</div>
+                                    <div class="filter__form--part_main__content">
+                                        <h1>International Services to Another Country</h1>
+                                        <ul>
+                                        <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Emergancy</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>time critical</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>less urgent</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label for="filter__form--part-3"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                            </div>
+
+                            <div class="filter__form--part active">
+                                <div class="filter__form--part_main" id="filter__form--part-4">
+                                    <div class="filter__form--part_main__text" id="filter__form--part-4--text">Find a service</div>
+                                    <div class="filter__form--part_main__content">
+                                        <h1>International Services to Another Country</h1>
+                                        <ul>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Emergancy</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>time critical</li>
+                                            <li><i class="fa fa-sort-desc" aria-hidden="true"></i>less urgent</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label for="filter__form--part-4"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                            </div>
+                        </div>
                     </div>
                     <div class='filter-area__img'>
                         <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="">

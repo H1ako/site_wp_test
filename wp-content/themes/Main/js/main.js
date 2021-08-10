@@ -14,3 +14,9 @@ $(document).on('click', '.loc_item:not(.active)', function () {
     th.addClass('active');
     select_location_text.text(th.text());
 })
+
+$('.filter__form--part label, .filter__form--part_main__text').on('click', function () {
+    let th = $(this);
+    let form_part = th.closest('.filter__form--part');
+    form_part.toggleClass('active');
+})
