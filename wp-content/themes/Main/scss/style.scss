@@ -21,6 +21,11 @@ html{
 body{
     background: var(--color-bg);
 }
+
+h1, h2, h3, p{
+    margin: 0;
+    padding: 0;
+}
 .section-inner{
     margin: 0 auto;
     
@@ -85,7 +90,6 @@ header{
         
 
         .section-inner{
-            overflow: hidden;
             transition: max-height .6s linear;
             display: flex;
             height: auto;
@@ -96,6 +100,7 @@ header{
 
             @media (max-width: 740px){
                 flex-direction: column;
+                overflow: hidden;
                 max-height: 12vh;
                 &.active{
                     max-height: 100vh;
@@ -496,6 +501,7 @@ main{
                         }
 
                         label{
+                            cursor: pointer;
                             flex-shrink: 0;
                             color: var(--color-main);
                             background: var(--color-second);
@@ -521,6 +527,71 @@ main{
     .section-video{
         margin-top: 10.5rem;
         position: relative;
+
+        .video{
+            position: relative;
+            width: 100%;
+            min-height: 550px;
+            display: flex;
+            background-repeat: no-repeat;
+            justify-content: center;
+            background-position: center;
+            background-size: auto 100%;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;bottom: 0;left: 0;right: 0;
+                background: linear-gradient(rgba(0, 0, 0, 1), var(--color-second));
+                opacity: .75;
+                z-index: 1;
+            }
+
+            .content{
+                display: none;
+            }
+
+            h1{
+                align-self: flex-start;
+                @include fontPoppinsSemiBold;
+                font-size: clamp(2.75rem, 4.75vw, 4.75rem);
+                color: var(--color-light);
+                z-index: 5;
+                text-align: center;
+
+            }
+
+            .btn{
+                margin-top: 60px;
+                z-index: 10;
+                background: var(--color-second);
+                color: var(--color-main);
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: none;
+                font-size: 1.75rem;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                box-shadow: 0px 5px 1em 1px var(--color-second);
+            }
+            &.pause{
+
+                .content{
+                    margin-top: 140px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+
+                }
+            }
+
+        }
     }
     // ==/Video==
 
@@ -533,12 +604,85 @@ main{
     // ==Slogan==
     .section-slogan{
         position: relative;
+        background: var(--color-main);
+        width: 100%;
+        padding-block: 90px;
+
+        .section-inner{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--color-light);
+            .wrapper{
+                .title{
+                    @include fontPoppinsBold;
+                    font-size: 2.75rem;
+                }
+                .desc{
+                    width: 600px;
+                    max-width: 100%;
+                    margin-top: 20px;
+                    @include fontPoppinsRegular;
+                    font-size: 1.35rem;
+                }
+            }
+
+            a{
+                white-space: nowrap;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include fontPoppinsSemiBold;
+                color: var(--color-light);
+                font-size: 1.2rem;
+                padding: 1.2em 2em;
+                background: var(--color-main-dark);
+                cursor: pointer;
+                text-decoration: none;
+                border-radius: 25px;
+                text-transform: uppercase;
+            }
+        }
     }
     // ==/Slogan==
 
     // ==Partners==
     .section-partners{
+        margin-top: 70px;
         position: relative;
+        width: 100%;
+
+        .section-inner{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            .partner{
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                width: 210px;
+                height: 110px;
+                background: #f9f9f9;
+                border: 3px solid var(--color-main-light);
+                border-radius: 5px;
+                margin: 15px;
+                transition: border .6s linear;
+
+                &:hover{
+                    border: 3px solid var(--color-main);
+                }
+    
+                img{
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
     }
     // ==/Partners==
 }

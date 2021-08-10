@@ -67,8 +67,11 @@ get_header(); ?>
             </div>
         </section>
         <section class="section-video">
-            <div class="video">
-                <h1 class="title">One of the best international service provider</h1>
+            <div class="video pause" style='background-image: url(<?= wp_get_attachment_image_url(carbon_get_theme_option('site_video_bg'), 'full') ?>)'>
+                <div class="content">
+                    <h1 class="title">One of the best international service provider</h1>
+                    <button class="btn"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>                
             </div>
         </section>
         <section class="section-logistics">

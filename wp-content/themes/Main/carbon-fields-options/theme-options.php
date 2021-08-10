@@ -16,4 +16,5 @@ Container::make('theme_options', 'Site Settings')
         Field::make('image', 'site_logo', 'Logo'),
         Field::make('media_gallery', 'site_partners', 'Partners')->set_type(['image']),
         Field::make('image', 'site_header_bg', 'Header background'),
+        Field::make('image', 'site_video_bg', 'Video background'),
     ]);

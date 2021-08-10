@@ -43,7 +43,7 @@ $screen-lg-max: 1199;
     background: var(--color-second);
     color: var(--color-main);
     border: .25em solid var(--color-second);
-    box-shadow: 0 .5em 20px 1em rgba(255, 204, 0, .3);
+    box-shadow: 0 .5em 10px 0 var(--color-second);
 
 }
 
@@ -70,7 +70,7 @@ $screen-lg-max: 1199;
     --color-main-num: 0;
     --color-main: hsl(var(--color-main-num), 100%, 36%);
     --color-main-dark: hsl(var(--color-main-num), 100%, 30%);;
-    --color-main-light: hsl(var(--color-main-num), 100%, 40%);
+    --color-main-light: hsl(var(--color-main-num), 100%, 22.5%);
     --color-second: #ffcc00;
     --transitionTime-select-location: .2s;
 
