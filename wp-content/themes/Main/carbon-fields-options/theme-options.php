@@ -19,4 +19,5 @@ Container::make('theme_options', 'Site Settings')
         Field::make('image', 'site_video_bg', 'Video background'),
         Field::make('image', 'site_footer_left_image', 'Footer left image'),
         Field::make('image', 'site_footer_right_image', 'Footer right image'),
+        Field::make('image', 'site_logistics_image', 'Logistics image'),
     ]);

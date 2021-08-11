@@ -77,13 +77,40 @@ get_header(); ?>
                 <div class="features">
                     <div class="feature">
                         <img src="<?= get_template_directory_uri() ?>/Images/feature_img.png" alt="">
-                        <h1 class="feature__title">Aerospace Provider</h1>
-                        <ul class="feature__features">
-                            <li>When an unknown printer took.</li>
-                            <li>Make a type specimen book.</li>
-                            <li>It has survived.</li>
-                            <li>Airlines unknown specimen.</li>
-                        </ul>
+                        <div class="feature__wrapper">
+                            <h1 class="feature__wrapper__title">Aerospace Provider</h1>
+                            <ul class="feature__wrapper__features">
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>When an unknown printer took.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Make a type specimen book.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>It has survived.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Airlines unknown specimen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                                        
+                    <div class="feature">
+                        <img src="<?= get_template_directory_uri() ?>/Images/feature_img.png" alt="">
+                        <div class="feature__wrapper">
+                            <h1 class="feature__wrapper__title">Aerospace Provider</h1>
+                            <ul class="feature__wrapper__features">
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>When an unknown printer took.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Make a type specimen book.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>It has survived.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Airlines unknown specimen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <img src="<?= get_template_directory_uri() ?>/Images/feature_img.png" alt="">
+                        <div class="feature__wrapper">
+                            <h1 class="feature__wrapper__title">Aerospace Provider</h1>
+                            <ul class="feature__wrapper__features">
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>When an unknown printer took.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Make a type specimen book.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>It has survived.</li>
+                                <li><i class="fa fa-sort-desc" aria-hidden="true"></i>Airlines unknown specimen.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="filter-area">
@@ -138,7 +165,7 @@ get_header(); ?>
                                 <label for="filter__form--part-3"><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
                             </div>
 
-                            <div class="filter__form--part active">
+                            <div class="filter__form--part">
                                 <div class="filter__form--part_main" id="filter__form--part-4">
                                     <div class="filter__form--part_main__text" id="filter__form--part-4--text">Find a service</div>
                                     <div class="filter__form--part_main__content">
@@ -154,7 +181,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class='filter-area__img'>
+                    <div class='filter-area__img' style='background-image: url(<?=wp_get_attachment_image_url(carbon_get_theme_option('site_logistics_image'), 'full')?>)'>
                         <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="">
                     </div>
                 </div>
