@@ -472,6 +472,9 @@ header nav .section-inner .logo-and-menu {
     height: 12vh;
   }
 }
+header nav .section-inner .logo-and-menu a {
+  cursor: pointer;
+}
 header nav .section-inner .logo-and-menu .logo {
   width: 100%;
   max-width: 134px;
@@ -977,7 +980,7 @@ main .section-logistics .section-inner .features {
   width: 100%;
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 main .section-logistics .section-inner .features .feature {
   display: flex;
@@ -1333,6 +1336,7 @@ footer .section-inner {
   min-height: 310px;
   display: flex;
   justify-content: center;
+  transform: translateY(-1px);
 }
 footer .section-inner .left-img,
 footer .section-inner .right-img {

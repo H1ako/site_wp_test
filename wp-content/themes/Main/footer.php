@@ -1,6 +1,7 @@
+    <?php if(carbon_get_post_meta(get_the_ID(), 'footer-is-toggle')): ?>
     <footer>
         <div class="section-inner">
-            <div style="background-image: url(<?= wp_get_attachment_image_url(carbon_get_theme_option('site_footer_left_image'), 'full') ?>)" class="left-img"></div>
+            <div style="background-image: url(<?= wp_get_attachment_image_url(carbon_get_post_meta(get_the_ID(), 'footer_first_image'), 'full') ?>)" class="left-img"></div>
             <div class="content">
                 <div class="contact">
                     <h1 class="title">contact center</h1>
@@ -35,9 +36,10 @@
                     </ul>
                 </div>
             </div>
-            <div style="background-image: url(<?= wp_get_attachment_image_url(carbon_get_theme_option('site_footer_right_image'), 'full') ?>)" class="right-img"></div>
+            <div style="background-image: url(<?= wp_get_attachment_image_url(carbon_get_post_meta(get_the_ID(), 'footer_second_image'), 'full') ?>)" class="right-img"></div>
         </div>
     </footer>
+    <?php endif ?>
     <?php wp_footer(); ?>
 </body>
 </html>

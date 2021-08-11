@@ -118,6 +118,9 @@ header{
                     height: 12vh;
                     
                 }
+                a{
+                    cursor: pointer;
+                }
                 .logo{
                     width: 100%;
                     max-width: 134px;
@@ -610,7 +613,7 @@ main{
                 width: 100%;
                 display: grid;
                 grid-gap: 30px;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
                 .feature{
                     display: flex;
@@ -984,6 +987,7 @@ footer{
         min-height: 310px;
         display: flex;
         justify-content: center;
+        transform: translateY(-1px);
         .left-img,
         .right-img{
             position: absolute;

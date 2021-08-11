@@ -8,7 +8,9 @@
     <?php wp_head(); ?>
 </head>
 <body>
+    <?php if(carbon_get_post_meta(get_the_ID(), 'header-is-toggle')): ?>
     <header>
+        <?php if(carbon_get_post_meta(get_the_ID(), 'header-top-bar')): ?>
         <div class="top-bar">
             <div class="section-inner">
                 <div class="language">
@@ -22,11 +24,19 @@
                 </div>
             </div>
         </div>
-        
+        <?php endif ?>
+
+        <?php if(carbon_get_post_meta(get_the_ID(), 'header-nav')): ?>
         <nav>
             <div class="section-inner" id='menu'>
                 <div class="logo-and-menu">
+                    <?php if(is_front_page()): ?>
                     <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="" class="logo">
+                    <?php else: ?>
+                    <a href='<?=get_home_url() ?>'>
+                        <img src="<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_logo' ), 'full'); ?>" alt="" class="logo">
+                    </a>
+                        <?php endif ?>
                     <div class="menu" id='menu-btn'><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
                 <?php
@@ -39,12 +49,15 @@
                 <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
             </div>
         </nav>
-        <div class="main-part" style='background-image: url(<?= wp_get_attachment_image_url(carbon_get_theme_option( 'site_header_bg' ), 'full'); ?>)'>
+        <?php endif ?>
+
+        <?php if(carbon_get_post_meta(get_the_ID(), 'header-main')): ?>
+        <div class="main-part" style='background-image: url(<?= wp_get_attachment_image_url(carbon_get_post_meta(get_the_ID(), 'top_background_image'), 'full'); ?>)'>
             <div class="section-inner">
                 <div class="about">
-                    <h1 class="about__title">We Deliver<br>With Speed</h1>
+                    <h1 class="about__title"><?=carbon_get_post_meta(get_the_ID(), 'top_title')?></h1>
                     <p class="about__desc">
-                        When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                        <?=carbon_get_post_meta(get_the_ID(), 'top_subtitle')?>
                     </p>
                     <ul class="about__features">
                         <li>amazing</li>
@@ -53,9 +66,11 @@
                     </ul>
                 </div>
                 <div class="btns">
-                    <button class="btns__more">learn more</button>
-                    <button class="btns__dhl">dhl worldwide</button>
+                    <button class="btns__more"><?=carbon_get_post_meta(get_the_ID(), 'top_first_btn_text')?></button>
+                    <button class="btns__dhl"><?=carbon_get_post_meta(get_the_ID(), 'top_second_btn_text')?></button>
                 </div>
             </div>
         </div>
+        <?php endif ?>
     </header>
+    <?php endif ?>
